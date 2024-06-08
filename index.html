@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Even Odd App</title>
+    <style>
+        *{ font-size: 30px; font-family: 'Poppins';}
+        body{background-color: #584e58;}
+        a{text-decoration: none;color: black; margin: 10%;}
+        .nav{background-color: aquamarine;text-decoration: none;border: none;box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset}
+        input{border:none ;box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset}
+        .btn{background-color: aquamarine;border-radius: 10px;border: none;box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;text-shadow: none;}
+        .btn:hover{background-color: aqua;transition: 0.3s;box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 247, 255, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;color: rgb(0, 129, 189);}
+        .btn:active{transition: 0.3s;transform: translateY(2px);box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0px, rgba(0, 247, 255, 0.3) 0px 7px 13px 0px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;color: rgb(0, 194, 194);}
+    </style>
+</head>
+<body>
+    <center>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <h1>Even Odd APP</h1>
+        <form onsubmit="Check()">
+            <input type="number" placeholder="Enter intger" id="num" >
+            <br><br>
+            <input type="submit" value="Check" class="btn">
+        </form>
+        <h2 id="msg"></h2>
+
+        <script>
+            function check(){
+                event.preventDefault();
+                let num =document.getElementById("num");
+                let msg =document.getElementById("msg");
+
+                if(num.value == ""){
+                    alert("U did not enter any interger");
+                    msg.innerHTML = "";
+                    num.focus();
+                    return;
+                }
+                let n = parseInt(num.value);
+                let r = n % 2 == 0 ? "even" : "odd";
+                msg.innerHTML = r;
+            }
+        </script>
+    </center>
+    
+</body>
+</html>
